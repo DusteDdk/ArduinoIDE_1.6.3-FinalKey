@@ -305,6 +305,37 @@ leonardo.build.variant=leonardo
 leonardo.build.extra_flags={build.usb_flags}
 
 ##############################################################
+finalkey.name=FinalKey
+finalkey.vid.0=0x1d50
+finalkey.pid.0=0x60ca
+
+finalkey.upload.tool=avrdude
+finalkey.upload.protocol=avr109
+finalkey.upload.maximum_size=28672
+finalkey.upload.maximum_data_size=2560
+finalkey.upload.speed=57600
+finalkey.upload.disable_flushing=true
+finalkey.upload.use_1200bps_touch=true
+finalkey.upload.wait_for_upload_port=true
+
+finalkey.bootloader.tool=avrdude
+finalkey.bootloader.low_fuses=0xff
+finalkey.bootloader.high_fuses=0xd8
+finalkey.bootloader.extended_fuses=0xcb
+finalkey.bootloader.file=finalkey/FinalKey.hex
+finalkey.bootloader.unlock_bits=0x3F
+finalkey.bootloader.lock_bits=0x2F
+
+finalkey.build.mcu=atmega32u4
+finalkey.build.f_cpu=16000000L
+finalkey.build.usb_product="FinalKey"
+finalkey.build.vid=0x1d50
+finalkey.build.pid=0x60ca
+finalkey.build.board=AVR_LEONARDO
+finalkey.build.core=arduino
+finalkey.build.variant=leonardo
+finalkey.build.extra_flags={build.usb_flags}
+##############################################################
 
 micro.name=Arduino Micro
 micro.vid.0=0x2341

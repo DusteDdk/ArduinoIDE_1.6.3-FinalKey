@@ -174,12 +174,14 @@ private:
 	void sendReport(KeyReport* keys);
 public:
 	Keyboard_(void);
-	void begin(void);
+	void begin(uint8_t* keymap);
 	void end(void);
 	virtual size_t write(uint8_t k);
 	virtual size_t press(uint8_t k);
 	virtual size_t release(uint8_t k);
 	virtual void releaseAll(void);
+       	virtual void raw(uint8_t scanCode, uint8_t modifiers);
+
 };
 extern Keyboard_ Keyboard;
 

@@ -49,6 +49,7 @@ const u16 STRING_LANGUAGE[2] = {
 
 #ifndef USB_PRODUCT
 // If no product is provided, use USB IO Board
+#error "USB_PRODUCT undefined, required."
 #define USB_PRODUCT     "USB IO Board"
 #endif
 
@@ -64,10 +65,17 @@ const u8 STRING_PRODUCT[] PROGMEM = USB_PRODUCT;
 #    undef USB_MANUFACTURER
 #  endif
 #  define USB_MANUFACTURER "SparkFun"
+#elif USB_VID == 0x1d50
+#  if defined(USB_MANUFACTURER)
+#    undef USB_MANUFACTURER
+#  endif
+#  define USB_MANUFACTURER "CyberStalkR"
 #elif !defined(USB_MANUFACTURER)
 // Fall through to unknown if no manufacturer name was provided in a macro
 #  define USB_MANUFACTURER "Unknown"
 #endif
+
+
 
 const u8 STRING_MANUFACTURER[] PROGMEM = USB_MANUFACTURER;
 
